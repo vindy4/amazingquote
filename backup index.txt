@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+<script src="jquery-1.11.2.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<style type="text/css">
+body {
+    background: url(background.jpg);
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+.ui-page {
+    background: transparent;
+}
+@font-face {
+    font-family: 'Blokletters-Balpen'; 
+    src: url('Blokletters-Balpen.ttf');
+}
+a {
+    color: #0000ff;
+}
+
+.ui-content{
+    background: transparent;
+}
+.ui-listview .ui-li-icon {max-height: 30px;max-width: 30px}
+a{
+	font-weight:bold;
+	color:white;
+}
+
+p{
+	text-align: center;
+	font-family:Blokletters-Balpen;
+	font-weight:bold;
+	line-height: 170%;
+	font-size:14px; 
+}
+</style>
+
+<body onload="calculateIndex()">
+
+<div data-role="page" id="pageone"  >
+  <div data-role="header" style="background-color: #1c1e29;height:52px;">
+	<div   data-role="navbar" style="width:100%;height:100%;">
+	<ul>
+		 <li><a href="#"  style="background-color: #1c1e29;">
+				<img src="home.png"style="width:30px;height:30px">
+			</a>
+		</li>
+		
+		<li><a href="#" style="background-color: #1c1e29;" >
+				<img src="heart.png"style="width:30px;height:30px">
+			</a>
+		</li>
+		
+		<li><a href="#" style="background-color: #1c1e29;">
+				<img src="info.png"style="width:30px;height:30px">
+			</a>
+		</li>
+		
+	</ul>	
+	</div> 	
+  </div>
+
+  <div data-role="main" class="ui-content">
+		<div style="width:80%;margin-left:10%;margin-top:30%;">
+			<p id="quote">
+			</p>
+	<br>
+			<p id="author"></p>
+		</div>
+	</div>
+  
+  <div data-role="footer" style="background-color: #1c1e29;">
+   
+    <a href="#"  class="ui-btn ui-corner-all" style="width:100%;margin-right:20px;color:white;
+	background-color: #1c1e29;">Add to favourite</a>
+  </div>	
+</div> 
+
+<script>
+	var fav=["quotes"];
+
+	function addQuote(){
+		fav.push(1);
+		print();
+	}
+
+	function calculateIndex(){
+		var n = new Date().getMonth();
+		var hash=[0,31,59,90,120,151,181,212,243,273,304];
+		var d= new Date().getDate();
+			n= d+hash[n];
+			if(n==1)
+			{
+				var i=1;
+			}
+			else{
+				var i= 2*n;
+			}
+		
+	}
+	function print(){
+		
+			document.write(quotes[fav[1]]);
+	}
+	var quotes=[
+	"“Success is going from failure to failure without losing your enthusiasm.” <br> ","Winston Churchill ",
+	
+	
+	"We dont get a chance to do that many things, and every one should be really excellent.Because this is our life. Life is brief, and then you die, you know? And we have all chosen todo this with our lives. So it better be damn good. It better be worth it."
+	,"Steve Jobs",
+	"The monotomy and solitude of a quite life stilmulates the creative genius."
+	,"Albert Einstien",
+	"Be the change you want to be.", "Mahatma Gandhi",
+	"You don't always need a plan. Sometimes you just need to breathe,trust,let go and see what happens","Mandy Hale",
+	"If you think you can, or you think you can't , both ways you are right",
+	"Henery ford","The superior man thinks of virtue, the common man thinks of comfort","Confucius",
+	"Life is like riding bicyle.To keep your balance, you must keep moving","Albert Einstein",
+	"We act as though comfort and luxury were the chief requirements of life, when all that we need to make us happy is something to be enthusiastic about",
+	"Albert Einstein",
+	"The only way to do great work is to love what you do.","Steve Jobs",
+	"The ones who are crazy enough to think they can change the world, are the one who do","Steve Jobs",
+	"Failure will never overtake me if my determination to succeed is strong enough","Og mandnio"
+	,"You don't always need a plan. Sometimes you just need to breathe,trust,let go and see what happens","Mandy Hale",
+	"If you think you can, or you think you can't , both ways you are right","Henery ford",
+	"The superior man thinks of virtue, the common man thinks of comfort","Confucius",
+	"Life is like riding bicyle.To keep your balance, you must keep moving","Albert Einstein",
+	"We act as though comfort and luxury were the chief requirements of life, when all that we need to make us happy is something to be enthusiastic about","Albert Einstein",
+	"The only way to do great work is to love what you do.","Steve Jobs",
+	"The ones who are crazy enough to think they can change the world, are the one who do","Steve Jobs",
+	"Failure will never overtake me if my determination to succeed is strong enough","Og mandnio",
+	"Don't count the days. Make the days count.","Anonymous",
+	"Life is about making an impact, not making an income.","Kevin kruse",
+	"Whatever the mind of man can conceive and believe, it can achieve.","Neploean Hill",
+	"Strive not to be a success, but rather to be of value. ","Albert Einstein",
+	"Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.","Robert Frost"
+	,"I attribute my success to this: I never gave or took any excuse. ","Florence Nightingale",
+	"You miss 100% of the shots you don’t take.","Wayne Gretzky",
+	" I’ve missed more than 9000 shots in my career. I’ve lost almost 300 games. 26 times I’ve been trusted to take the game winning shot and missed. I’ve failed over and over and over again in my life. And that is why I succeed.","Michael Jordan",
+	"The most difficult thing is the decision to act, the rest is merely tenacity.","Amelia Earhart",
+	"Life isn’t about getting and having, it’s about giving and being.","Kevin Kruse",
+	"Life is what happens to you while you’re busy making other plans. ","John Lennon",
+	"Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do, so throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails.  Explore, Dream, Discover.","Mark Twain",
+	"Life is 10% what happens to me and 90% of how I react to it. ","Charles Swindoll",
+	"The most common way people give up their power is by thinking they don’t have any.","Alice Walker",
+	"The mind is everything. What you think you become.  ","Buddha",
+	"An unexamined life is not worth living. ","Socrates",
+	"Eighty percent of success is showing up. ","Woody Allen",
+	"Your time is limited, so don’t waste it living someone else’s life. ","Steve Jobs",
+	"Winning isn’t everything, but wanting to win is. ","Vince Lombardi",
+	"I am not a product of my circumstances. I am a product of my decisions. ","Stephen Covey",
+	"Every child is an artist.  The problem is how to remain an artist once he grows up.","Pablo Picasso",
+	"Life beats down and crushes the soul and art reminds you that you have one. ","Stella Adler",
+"Painting is poetry that is seen rather than felt, and poetry is painting that is felt rather than seen. ","Leonardo da Vinci",
+"Art is the desire of a man to express himself, to record the reactions of his personality to the world he lives in. ","Amy Lowell",
+"“A man is but a product of his thoughts. What he thinks he becomes.”","Mahatma gandhi",
+"To be nobody but yourself in a world which is doing its best, night and day, to make you everybody else means to fight the hardest battle which any human being can fight; and never stop fighting. "," cummings, 1955",
+"He who trims himself to suit everyone will soon whittle himself away. ","Raymond Hull",
+"All my life I had been looking for something, and everywhere I turned someone tried to tell me what it was. I accepted their answers too, though they were often in contradiction and even self-contradictory. I was naïve. I was looking for myself and asking everyone except myself questions which I, and only I, could answer. It took me a long time and much painful boomeranging of my expectations to achieve a realization everyone else appears to have been born with: that I am nobody but myself. ","Ralph Ellison",
+"Most people are other people. Their thoughts are someone else's opinions, their lives a mimicry, their passions a quotation. ","Oscar Wilde",
+"Always be a first-rate version of yourself, instead of a second-rate version of somebody else. ","Judy Garland",
+"I am told to just be myself, but as much as I have practiced the impression, I am still no good at it. ","Robert Brault",
+"Almost every man wastes part of his life in attempts to display qualities which he does not possess, and to gain applause which he cannot keep. ","Samuel Johnson",
+"Be not angry that you cannot make others as you wish them to be, since you cannot make yourself as you wish to be. ","Thomas à Kempis",
+"You've got a lot of choices. If getting out of bed in the morning is a chore and you're not smiling on a regular basis, try another choice. ","Steven D.",
+"What saves a man is to take a step. Then another step. It is always the same step, but you have to take it. ","Antoine de Saint-Exupéry",
+"Anyone can carry his burden, however hard, until nightfall. Anyone can do his work, however hard, for one day. Anyone can live sweetly, patiently, lovingly, purely, till the sun goes down. And this is all life really means. ","Robert Louis Stevenson",
+"If you don't like how things are, change it! You're not a tree. ","Jim Rohn",
+"You can tell more about a person by what he says about others than you can by what others say about him. ","Leo Aikman",
+"A man with one watch knows what time it is; a man with two watches is never quite sure. ","Lee Segall",
+"Even a clock that does not work is right twice a day. ","Polish Proverb",
+"We are all but recent leaves on the same old tree of life and if this life has adapted itself to new functions and conditions, it uses the same old basic principles over and over again. There is no real difference between the grass and the man who mows it. ","Albert Szent-Györgyi",
+"The fish trap exists because of the fish. Once you've gotten the fish you can forget the trap. The rabbit snare exists because of the rabbit. Once you've gotten the rabbit, you can forget the snare. Words exist because of meaning. Once you've gotten the meaning, you can forget the words. Where can I find a man who has forgotten words so I can talk with him? ","Chuang Tzu",
+"Whatever I take, I take too much or too little; I do not take the exact amount. The exact amount is no use to me. ","Antonio Porchia",
+"When I study philosophical works I feel I am swallowing something which I don't have in my mouth.  ","Albert Einstein",
+"Get married, in any case.  If you happen to get a good mate, you will be happy; if a bad one, you will become philosophical, which is a fine thing in itself.  ","Socrates",
+"The mind is what it thinks. To make it true, think true. ","Nisargadatta Maharaj",
+"“Your heart knows the answer your mind has been searching for.” ","Katherine Hiraldo",
+"Never mind searching for who you are.Search for the person you aspire to be.” ","Robert Brault",
+"“He who travels in search of something which he hasnot got, travels away from himself and grows old evenin youth among old things.” ","Ralph Waldo Emerson",
+"“I ask of life to shine meaning in everyone who is searching.” ","Aurora Hernandez",
+"“Seven Deadly Sins Wealth without work Pleasure without conscience Science without humanity Knowledge without character Politics without principle Commerce without morality Worship without sacrifice.” ? ","Mahatma Gandhi",
+"“Live as if you were to die tomorrow. Learn as if you were to live forever.”","Mahatma Gandhi",
+"A no uttered from the deepest conviction is better than a ‘Yes’ uttered merely to please, or worse, to avoid trouble.","Mahatma gandhi",
+"If you don't get what you want, you suffer; if you get what you don't want, you suffer; even when you get exactly what you want, you still suffer because you can't hold on to it forever. Your mind is your predicament. It wants to be free of change. Free of pain, free of the obligations of life and death. But change is law and no amount of pretending will alter that reality." ," Socrates",
+"Happiness is always a by-product. It is probably a matter of temperament, and for anything I know it may be glandular. But it is not something that can be demanded from life, and if you are not happy you had better stop worrying about it and see what treasures you can pluck from your own brand of unhappiness. ","Robertson Davies",
+"Man is fond of counting his troubles, but he does not count his joys. If he counted them up as he ought to, he would see that every lot has enough happiness provided for it. ","Fyodor Dostoevsky",
+"Often people attempt to live their lives backwards; they try to have more things, or more money, in order to do more of what they want, so they will be happier. The way it actually works is the reverse. You must first be who you really are, then do what you need to do, in order to have what you want. ","Margaret Young",
+"Happiness is like a butterfly which, when pursued, is always beyond our grasp, but, if you will sit down quietly, may alight upon you. ","Nathaniel Hawthorne",
+"Friendship is like peeing on yourself: everyone can see it, but only you get the warm feeling that it brings.","Anonymous",
+"A successful man is one who makes more money than his wife can spend. A successful woman is one who can find such a man.","K Henry",
+" A diplomat is someone who can tell you to go to hell in such a way that you will look forward to the trip.","Opera",
+"Two things are infinite, the universe and human stupidity, and I am not yet completely sure about the universe.","Albert Einstein",
+"There comes a time when you have to choose between turning the pageand closing the book","Josh jameson",
+"I think of life as a good book. The further you get into it, the more it begins to make sense.","Harold Kushner",
+"The more that you read, the more things you will know. The more that you learn, the more places you'll go"	,"Dr. Suess",
+"In the end, it's not going to matter how many breaths you took, but how many moments took your breath away"," shing xiong",
+"When life gives you a hundred reasons to cry, show life that you have a thousand reasons to smile."," Unknown",
+"I always knew looking back on the tears would make me laugh, but I never knew looking back on the laughs would make me cry","Unknown",
+"Work like you don't need the money, love like you've never been hurt and dance like no one is watching."," Randall G Leighton",
+"When one door closes, another opens; but we often look so long and so regretfully upon the closed door that we do not see the one that has opened for us."," Alexander Graham Bell",
+"You've got to take the good with the bad, smile with the sad, love what you've got, and remember what you had. Always forgive, but never forget. Learn from mistakes, but never regret."," Unknown",
+"You can close your eyes to things you don't want to see, but you can't close your heart to the things you don't want to feel.","Unknown",
+"Life isn't about waiting for the storm to pass...it's learning to dance in the rain."," idk",	
+"I've learned that things change, people change, and it doesn't mean you forget the past or try to cover it up. It simply means that you move on and treasure the memories. Letting go doesn't mean giving up... it means accepting that some things weren't meant to be.","Lisa Brooks",
+"Imagine there is a bank account that credits your account each morning with $86,400. It carries over no balance from day to day.Every evening the bank deletes whatever part of the balance you failed to use during the day. What would you do? Draw out every cent, of course?Each of us has such a bank. It's name is TIME.Every morning, it credits you with 86,400 seconds.Every night it writes off as lost, whatever of this you have failed to invest to a good purpose.It carries over no balance. It allows no over draft. Each day it opens a new account for you. Each night it burns the remains of the day.If you fail to use the day's deposits, the loss is yours. There is no drawing against tomorrow.You must live in the present on today's deposits. Invest it so as to get from it the utmost in health, happiness and success! The clock is running!! Make the most of today.To realise the value of ONE YEAR, ask a student who failed a grade.To realise the value of ONE MONTH, ask a mother who has given birth to a premature baby.To realise the value of ONE WEEK, ask the editor of a weekly newspaper.To realise the value of ONE HOUR, ask the lovers who are waiting to meet.To realise the value of ONE MINUTE, ask a person who just missed a train.To realise the value of ONE SECOND, ask someone who just avoided an accident.To realise the value of ONE MILLISECOND, ask the person who won a silver medal at the Olympics.Treasure every moment that you have! And treasure it more because you shared it with someone special, special enough to spend your time with. And remember time waits for no one.Yesterday is history. Tomorrow is a mystery. Today is a gift. That's why its called the present."," unknown",
+"I think that the only reason people hold onto memories so tight is because memories are the only things that dont change; when everybody else does."," Unknown",
+"Never regret something that made you smile"," Unknown",
+"Never regret something that made you smile","Unknown",
+"Throughout life people will make you mad, disrespect you and treat you bad. Let God deal with the things they do, 'cause hate in your heart will consume you too."," Will Smith",
+"You have enemies? Good. That means you've stood up for something, sometime in your life."," Winston Churchill",
+"The real art of conversation is not only to say the right thing at the right time, but also to leave unsaid the wrong thing at the tempting moment."," Unknown",
+"I am the author of my life. Unfortunately I'm writing in pen and I can't erase my mistakes...","anonymous",
+"Dream as if you'll live forever, live as if you'll die today","James Dean",	
+"I like to pretend that everything's alright. Because when everybody else thinks you're fine, sometimes you forget for a while that you're not."," anonymous",
+"The best things in life are unseen, thats why we close our eyes when we kiss, cry, and dream"," unknown",
+"If today was perfect there would be no need for tomorrow.","From a poster",
+"At one point in your life you either have the thing you want or the reasons why you don't"," Andy Roddick",
+"Worrying is like a rocking chair: it gives you something to do, but doesn't get you anywhere."," Van Wilder",
+"In three words I can sum up everything I've learned about life: it goes on."," Robert Frost",
+"You may not always end up where you thought you were going, But you will always end up where you were meant to be.","Jessica taylor",
+"Until you're ready to look foolish, you'll never have the possibility of being great.","Cher",
+"Many of life's failures are people who did not realize how close they were to success when they gave up.","Thomas Edison ",
+"Keep away from people who try to belittle your dreams. Small people always do that, but the really great ones make you feel that you, too, can become great."," Mark Twain ",
+"When people hurt you over and over, think of them like sandpaper. They may scratch and hurt you a bit, but in the end, you end up polished and they end up useless."," Chris Colfer",
+"Integrity is not a conditional word. It doesn't blow in the wind or change with the weather. It is your inner image of yourself, and if you look in there and see a man who won't cheat, then you know he never will. ","John D. MacDonald ",
+"When I was 5 years old, my mother always told me that happiness was the key to life.When I went to school, they asked me what I wanted to be when I grew up. I wrote down happy.They told me I didn’t understand the assignment, and I told them they didn’t understand life.","John Lennon ",
+"I've missed more than 9,000 shots in my career. I've lost almost 300 games. Twenty six times I've been trusted to take the game winning shot and missed.I've failed over and over and over again in my life. And that is why I succeed.","Michael Jordan",
+"It's a sad day when you find out that it's not accident or fortune but just yourself that kept things from you."," Lillian Hellman",
+"A man is not finished when he is defeated. He is finished when he quits."," Richard Nixon",
+"You learn you can do your best even when it's hard, even when you're tired and maybe hurting a little bit. It feels good to show some courage.","Joe Namath",
+"A false friend and a shadow attend only while the sun shines.","Benjamin Franklin",
+"People are always blaming their circumstances for what they are. I don't believe in circumstances.The people who get on in this world are the people who get up and look for circumstances they want, and, if they can't find them, make them."," George Bernard Shaw",
+"Most folks are about as happy as they make up their minds to be.","Abraham Lincoln",
+"The secret of health for both mind and body is not to mourn for the past, not to worry about the future, or not to anticipate troubles, but to live in the present moment wisely and earnestly. ","Buddha",
+"The other night I ate at a real nice family restaurant. Every table had an argument going.","George Carlin",
+"We all grow up with the weight of history on us. Our ancestors dwell in the attics of our brains as they do in the spiraling chains of knowledge hidden in every cell of our bodies."," Shirley Abbott",
+"If you are working on something exciting that you really care about, you don’t have to be pushed. The vision pulls you. "," Steve Jobs",
+"“You can’t connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something — your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.” ","Steve Jobs",
+"I didn’t see it then, but it turned out that getting fired from Apple was the best thing that could have ever happened to me. The heaviness of being successful was replaced by the lightness of being a beginner again, less sure about everything. It freed me to enter one of the most creative periods of my life.” "," Steve Jobs ",
+"“Almost everything–all external expectations, all pride, all fear of embarrassment or failure–these things just fall away in the face of death, leaving only what is truly important. Remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose. You are already naked. There is no reason not to follow your heart.” "," Steve Jobs",
+"“Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do” "," Steve Jobs ",
+"“We don’t get a chance to do that many things, and every one should be really excellent. Because this is our life. Life is brief, and then you die, you know? And we’ve all chosen to do this with our lives. So it better be damn good. It better be worth it.” "," Steve Jobs ",
+"“That’s been one of my mantras — focus and simplicity. Simple can be harder than complex: You have to work hard to get your thinking clean to make it simple. But it’s worth it in the end because once you get there, you can move mountains.” "," Steve Jobs ",
+"“Being the richest man in the cemetery doesn’t matter to me … Going to bed at night saying we’ve done something wonderful… that’s what matters to me.”  "," Steve Jobs",
+"“Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking. Don’t let the noise of other’s opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.” "," Steve Jobs",
+"“Can anything be sadder than work left unfinished?  Yes; work never begun.” "," Christina Rossetti",
+"“If you’re not prepared to be wrong, you’ll never come up with anything original.” "," Ken Robinson",
+"“You can either be judged because you created something or ignored because you left your greatness inside of you.” "," James Clear",
+"“By avoiding risk, we really risk what is most important in life -reaching toward growth, our potential and a true contribution to a common goal.” "," Max DePree",
+"“Self-acceptance comes from meeting life’s challenges vigorously. Don’t numb yourself to your trials and difficulties, nor build mental walls to exclude pain from your life. You will find peace not by trying to escape your problems, but by confronting them courageously. You will find peace not in denial, but in victory.” "," Swami Sivananda",
+"“Faith is daring to put your dream to the test. It is better to try to do something and fail than to try to do nothing and succeed.” "," Robert H. Schuller",
+"“My whole life I’ve been telling myself, ‘don’t be afraid’. And it is only now that I’m realizing how stupid that is. Don’t be afraid. Like saying, ‘don’t move out of the way when someone tries to punch you’ or ‘don’t flinch at the heat of fire’ or ‘don’t blink’. Don’t be human. I’m afraid and you’re afraid and we’re all always going to be afraid, because that’s the point. What I should be telling myself is ‘be afraid, but do it anyway’. Live anyway.” "," Unknown",
+"How would you live your life if you could re-live it over again?","Just something to ponder",
+"“If I had my life to live over again, I’d dare to make more mistakes next time.  I’d relax.  I’d limber up.  I’d be sillier than I’ve been this trip.  I would take fewer things seriously.  I would take more chances, I would take more trips, I would climb more mountains and swim more rivers.  I would eat more ice cream and less beans.  I would, perhaps, have more actual troubles but fewer imaginary ones.  You see, I’m one of those people who was sensible and sane, hour after hour, day after day.Oh, I’ve had my moments.  If I had it to do over again, I’d have more of them.  In fact, I’d try to have nothing else – just moments, one after another, instead of living so many years ahead of each day.  I’ve been one of those persons who never goes anywhere without a thermometer, a hot-water bottle, a raincoat, and a parachute, If I could do it again, I would travel lighter than I have.If I had my life to live over, I would start barefoot earlier in the spring and stay that way later in the fall.  I would go to more dances, I would ride more merry-go-rounds, I would pick more daisies.” "," Nadine Stair",
+"“If you want to play the game and win, you’ve got to play ‘full out.’ You’ve got to be willing to feel stupid, and you’ve got to be willing to try things that might not work – and if they don’t work, be willing to change your approach. Otherwise, how could you innovate, how could you grow, how could you discovery who you really are?” "," Anthony Robbins",
+"“Taking chances on opportunities, even if they aren’t right for you, gives you a clearer picture of where you want to go with your life and career.” "," Lauren Bush Lauren",
+"“What I’ve learned over the years is that the path less traveled always makes for a more interesting journey. If you simply do what everyone else is doing, how can you ever expect to excel and create something wonderful and unique in your life?” "," Bear Grylls",
+"“Failures are life’s way of nudging you and letting you know you are off course. Trying new things and not being afraid to fail along the way are more important than what you learn in school.” "," Sara Blakely",
+"“When I was a child, my father used to encourage my brother and me to fail. At the dinner table, instead of asking about the best part of our day, he would ask us what we failed at that week. If we didn’t have something to tell him, he would be disappointed. When we shared whatever failure we’d endured, he’d high-five us and say, ‘Way to go!’ The gift my father gave us by doing this was redefining what failure truly meant.” "," Sara Blakely",
+"You learn so much from taking chances, whether they work out or not. Either way, you can grow from the experience and become stronger and smarter.” "," John Legend",
+"“You can risk being wrong or you can be boring.” "," Seth Godin"
+
+	];
+
+	document.getElementById("quote").innerHTML = quotes[0];
+	document.getElementById("author").innerHTML= quotes[1];	
+</script>
+
+
+</body>
+</html>
